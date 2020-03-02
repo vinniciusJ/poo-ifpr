@@ -93,6 +93,7 @@ public class FormasGeometricas {
     }
     public static void lerOpcao(){
         int opcao = Integer.parseInt(JOptionPane.showInputDialog("Informe o código \n [0]Sair \n [1] Triangulo \n [2] Quadrado/Retangulo \n [3] Circulo \n [4] Imprimir Objetos"));
+        verificarTipo(opcao);
     }
     
     public static void armazenarFormaGeometrica(FormasGeometricas figura){
