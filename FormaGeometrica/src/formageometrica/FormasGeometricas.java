@@ -55,7 +55,10 @@ public class FormasGeometricas {
                     imprimirAtributos();
                     break;
                 default:
-                	break;      	
+                    JOptionPane.showMessageDialog(null, "Op√ß√£o Inv√°lida");
+                    lerOpcao();
+                    break;
+                	     	
             }
             armazenarFormaGeometrica(figura);
             return true;
@@ -69,34 +72,27 @@ public class FormasGeometricas {
     	if(!triangulos.isEmpty()) {
     		String conteudo = "";
     		for(int i = 0; i < triangulos.size(); i++) {
-    			conteudo += "A ¡rea do " + (i + 1) + "∞ triangulo =>" + "( " + triangulos.get(i).base + " + " + triangulos.get(i).altura + " )/2 = "  + formatarNumero().format(triangulos.get(i).area) + "\n"; 
+    			conteudo += "A √Årea do " + (i + 1) + "¬∞ triangulo =>" + "( " + triangulos.get(i).base + " + " + triangulos.get(i).altura + " )/2 = "  + formatarNumero().format(triangulos.get(i).area) + "\n"; 
     		}
     		JOptionPane.showMessageDialog(null,"Areas do triangulo criados: \n" + conteudo);
     	}
     	if(!quadrados.isEmpty()) {
     		String conteudo = "";
     		for(int i = 0; i < quadrados.size(); i++) {
-    			conteudo += "A ¡rea do " + (i + 1) + "∞ quadrado/retangulo => " + quadrados.get(i).lado1 + "*" + quadrados.get(i).lado2 + " = " + formatarNumero().format(quadrados.get(i).area) + "\n";
+    			conteudo += "A √Årea do " + (i + 1) + "¬∞ quadrado/retangulo => " + quadrados.get(i).lado1 + "*" + quadrados.get(i).lado2 + " = " + formatarNumero().format(quadrados.get(i).area) + "\n";
     		}
     		JOptionPane.showMessageDialog(null,"Areas dos quadrados/retangulos criados: \n" + conteudo);
     	}
     	if(!circulos.isEmpty()) {
     		String conteudo = "";
     		for(int i = 0; i < circulos.size(); i++) {
-    			conteudo += "A ¡rea do " + (i +1) + "∞ circulo => " + circulos.get(i).raio + " * " + formatarNumero().format(Math.PI) + " = " + formatarNumero().format(circulos.get(i).area) + "\n";
+    			conteudo += "A √Årea do " + (i +1) + "¬∞ circulo => " + circulos.get(i).raio + " * " + formatarNumero().format(Math.PI) + " = " + formatarNumero().format(circulos.get(i).area) + "\n";
     		}
     		JOptionPane.showMessageDialog(null,"Areas dos circulos criados: \n" + conteudo);
     	}
     }
     public static void lerOpcao(){
-        int opcao;
-        do{
-            opcao = Integer.parseInt(JOptionPane.showInputDialog("Informe o cÛdigo \n [0]Sair \n [1] Triangulo \n [2] Quadrado/Retangulo \n [3] Circulo \n [4] Imprimir Objetos"));
-            while(!verificarTipo(opcao)){
-                JOptionPane.showMessageDialog(null, "OpÁ„o Inv·lida");
-                lerOpcao();
-            }
-        }while(opcao != 0);
+        int opcao = Integer.parseInt(JOptionPane.showInputDialog("Informe o c√≥digo \n [0]Sair \n [1] Triangulo \n [2] Quadrado/Retangulo \n [3] Circulo \n [4] Imprimir Objetos"));
     }
     
     public static void armazenarFormaGeometrica(FormasGeometricas figura){
