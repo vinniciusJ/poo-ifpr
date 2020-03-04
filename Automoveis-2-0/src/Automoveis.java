@@ -35,7 +35,7 @@ public class Automoveis {
 				"Modificar carro",
 				"Sair"
 		};
-		selecionarOpcao(JOptionPane.showOptionDialog(null, "Escolha uma opção", "Automoveis", 0, JOptionPane.QUESTION_MESSAGE, null, escolha, escolha[0]), 0);
+		selecionarOpcao(JOptionPane.showOptionDialog(null, "Escolha uma opÃ§Ã£o", "Automoveis", 0, JOptionPane.QUESTION_MESSAGE, null, escolha, escolha[0]), 0);
 		
 		lerOpcaoMenu();
 	}
@@ -45,10 +45,10 @@ public class Automoveis {
 				"Abastecer",
 				"Manutenir",
 				"Rodar",
-				"Mostrar Especificações",
+				"Mostrar EspecificaÃ§Ãµes",
 				"Voltar"
 		};
-		selecionarOpcaoCarro(JOptionPane.showOptionDialog(null, "Escolha uma opção", "Automoveis", 0, JOptionPane.QUESTION_MESSAGE, null, escolha, escolha[0]), index);
+		selecionarOpcaoCarro(JOptionPane.showOptionDialog(null, "Escolha uma opÃ§Ã£o", "Automoveis", 0, JOptionPane.QUESTION_MESSAGE, null, escolha, escolha[0]), index);
 	}
 	public static void selecionarOpcao(int op, int index) {
 		if(listaAutomoveis.size() != 0 || op == 0 || op == 3) {
@@ -69,7 +69,7 @@ public class Automoveis {
 			}
 		}
 		else {
-			JOptionPane.showMessageDialog(null, "Não há nenhum carro criado");
+			JOptionPane.showMessageDialog(null, "NÃ£o hÃ¡ nenhum carro criado");
 		}
 	}
 	
@@ -79,7 +79,7 @@ public class Automoveis {
 		for(int i = 0; i < listaAutomoveis.size(); i++) {
 			opcoes.add(listaAutomoveis.get(i).marca + " " + listaAutomoveis.get(i).modelo);
 		}
-		return JOptionPane.showOptionDialog(null, "Escolha uma opção", "Automoveis", 0, JOptionPane.QUESTION_MESSAGE, null, opcoes.toArray(), opcoes.toArray()[0]);
+		return JOptionPane.showOptionDialog(null, "Escolha uma opÃ§Ã£o", "Automoveis", 0, JOptionPane.QUESTION_MESSAGE, null, opcoes.toArray(), opcoes.toArray()[0]);
 	}
 	
 	public static void selecionarOpcaoCarro(int op, int index) {
@@ -132,27 +132,27 @@ public class Automoveis {
 	public void rodarAutomovel() {
 		if(this.status) {
 			if(this.manutencao) {
-				JOptionPane.showMessageDialog(null, "O carro está em manutenção");
+				JOptionPane.showMessageDialog(null, "O carro estÃ¡ em manutenÃ§Ã£o");
 			}
 			else {
-				JOptionPane.showMessageDialog(null, "O carro está andando");
+				JOptionPane.showMessageDialog(null, "O carro estÃ¡ andando");
 			}
 		}
 		else {
-			JOptionPane.showMessageDialog(null, "O carro está delisgado");
+			JOptionPane.showMessageDialog(null, "O carro estÃ¡ delisgado");
 		}
 	}
 	
 	/*******************************************************************/
 	
 	public static void imprimirStatus(Automoveis automovel) {
-		JOptionPane.showMessageDialog(null, "O carro está " + (automovel.status ? "ligado" : "desligado"));
+		JOptionPane.showMessageDialog(null, "O carro estÃ¡ " + (automovel.status ? "ligado" : "desligado"));
 	}
 	public static void imprimirEstadoManutencao(Automoveis automovel) {
-		JOptionPane.showMessageDialog(null, "O carro está " + (automovel.manutencao ? "manutenido" : " em manutencao"));
+		JOptionPane.showMessageDialog(null, "O carro estÃ¡ " + (!automovel.manutencao ? "manutenido" : " em manutencao"));
 	}
 	public static void imprimirEstadoCombustivel(Automoveis automovel) {
-		JOptionPane.showMessageDialog(null, "O carro " + (automovel.combustivel ? "abastecido" : "não pode ser abastecido quando estiver ligado. \n Por favor desligue-o"));
+		JOptionPane.showMessageDialog(null, "O carro estÃ¡ " + (automovel.combustivel ? "abastecido" : "nÃ£o pode ser abastecido quando estiver ligado. \n Por favor desligue-o"));
 	}
 	public static void imprimirAtributosCarro(Automoveis automovel) {
 		JOptionPane.showMessageDialog(
@@ -162,8 +162,8 @@ public class Automoveis {
 				"\n Cor: " + automovel.cor +
 				"\n Ano: " + Integer.toString(automovel.ano) +
 				"\n Estado: " + (automovel.status ? "Ligado" : "Desligado") +
-				"\n Manutenção: " + (automovel.manutencao ? "Sim" : "Não") +
-				"\n Abastecido: " + (automovel.combustivel ? "Sim" : "Não")
+				"\n ManutenÃ§Ã£o: " + (automovel.manutencao ? "Sim" : "NÃ£o") +
+				"\n Abastecido: " + (automovel.combustivel ? "Sim" : "NÃ£o")
 		);
 	}
 	
